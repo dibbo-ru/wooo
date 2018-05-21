@@ -1,0 +1,10 @@
+ <?php 
+   $myterms = wp_get_nav_menu_items('my-terms');
+   foreach ($myterms as $item) {
+     // check if it's a taxonomy
+     if ($item->type == 'taxonomy') {
+       // display the description
+       echo term_description($item->object_id, $item->object);
+     }
+   }
+ ?>
